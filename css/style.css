@@ -1,0 +1,16 @@
+﻿
+
+/***********GENERAL STYLES*************/
+
+
+/***********LOGIN PAGE****************/
+.signin-form{
+    padding-top:20vh;
+}
+
+
+/***************Main Page*************/
+.employee-list-card{
+    height:75vh;
+    overflow-y:scroll;
+}

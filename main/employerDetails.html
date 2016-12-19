@@ -1,0 +1,25 @@
+﻿
+
+
+<md-dialog aria-label="Employee Details" ng-controller="bottomSheetCtrl" style="width:30vw;height:40vh">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Employee Details</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <md-icon aria-label="Close dialog">close</md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+  <md-dialog-content>
+  <div class="container-fluid" >
+   <h1></h1>
+  <p style="text-align:center"><strong>Name:</strong> {{details.firstName}} {{details.middleName}} {{details.lastName}}</p>
+  <p style="text-align:center"><strong>Job Title:</strong>{{details.jobTitle}}</p>
+  <p style="text-align:center"><strong>Department:</strong>{{details.department}}</p>
+  <p style="text-align:center"><strong>Email:</strong>{{details.email}}</p>
+  <p style="text-align:center"><strong>Phone Number:</strong>0{{details.mobileNo}}</p>
+ 
+  </div>
+  </md-dialog-content>
+</md-dialog>

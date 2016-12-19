@@ -1,0 +1,117 @@
+﻿
+<div layout="column" style="height:100vh;" ng-cloak>
+  <section layout="row" flex>
+
+    <md-sidenav
+        class="md-sidenav-left"
+        md-component-id="left"
+        md-is-locked-open="$mdMedia('gt-md')"
+        md-whiteframe="8"
+        style="width:15vw"
+        >
+        
+
+      <md-toolbar class="md-theme-indigo" style="height:30vh">
+        <h1 class="md-toolbar-tools">Sidenav Left</h1>
+      </md-toolbar>
+      <br>
+      <md-content>
+    
+<md-list flex> 
+  <md-list-item ng-click="newEmployer()">
+    <md-icon>add_circle_outline</md-icon>
+    <p>new employer</p>
+  </md-list-item>
+
+  <md-list-item ng-click="null">
+    <md-icon>insert_chart</md-icon>
+    <p>Reports</p>
+  </md-list-item>
+
+</md-list>
+      </md-content>
+    </md-sidenav>
+
+
+
+<md-content flex layout-padding>
+
+    <div class="row" flex-offset="25" flex="40" >
+            <md-input-container md-no-float class="md-block">
+                <input type="text" placeholder="Search Employer List" ng-model="searchText">
+                <md-icon style="display:inline-block;">search</md-icon>
+            </md-input-container>           
+    </div>
+
+  
+        <div class="row">
+            <div>
+                <md-card>
+                    <md-card-title>
+                        Employee List
+                    </md-card-title>
+
+                    <md-card-content class="employer-list-card">
+
+<table class="table table-striped table-hover">
+<thead>
+      <tr>
+        <th>Id</th>
+        <th>Company Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Limit</th>
+        <th>Delete</th>
+        <th>Edit</th>
+        <th>Detais</th>
+
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr ng-repeat="employer in employers | filter:searchText"  ng-class-odd="'success'" ng-class-even="'info'">
+        <td>{{employer.id}}</td>
+        <td>{{employer.Name}}</td>
+        <td>{{employer.email}}</td>
+        <td>{{employer.phone}}</td>
+        <td>{{employer.LendingLimit}}</td>
+        <td>      
+      <md-button class="md-icon-button" aria-label="delete" ng-click="deleteRecord(employer)">
+        <md-icon>delete</md-icon>
+      </md-button>
+      </td>
+
+    <td>      
+      <md-button class="md-icon-button" aria-label="edit">
+        <md-icon>edit</md-icon>
+      </md-button>
+      </td>
+
+              <td>      
+      <md-button class="md-icon-button" aria-label="open">
+        <md-icon>open_in_new</md-icon>
+      </md-button>
+      </td>
+
+
+
+
+
+
+      </tr>      
+    </tbody>
+
+</table>
+
+     
+   
+     
+                    </md-card-content>
+                </md-card>
+            </div>
+        </div>
+    </div>
+</md-content>
+  </section>
+
+</div>

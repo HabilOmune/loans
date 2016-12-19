@@ -1,0 +1,87 @@
+﻿
+
+
+<md-dialog aria-label="Create New Employee Record" ng-controller="employerCtrl" style="width:100vw">
+    <form ng-cloak name="newEmployer" ng-submit="createEmployer(frm)">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>Create New Employer Record</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                    <md-icon aria-label="Close dialog">close</md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+
+        <md-dialog-content>
+            <div class="md-dialog-content">
+                <md-content layout-padding>
+
+                    <div layout-gt-sm="row">
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>Company Name</label>
+                            <input required ng-model="frm.name" name="name">
+                            <div ng-messages="newEmployer.name.$error">
+                                <div ng-message="required">This field is required.</div>
+                            </div>
+                        </md-input-container>
+                    </div>
+
+                    <div layout-gt-sm="row">
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>Email</label>
+                            <input required ng-model="frm.email" name="email" />
+                            <div ng-messages="newEmployer.email.$error">
+                                <div ng-message="required">This field is required.</div>
+                            </div>
+                        </md-input-container>
+
+
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>Phone Number</label>
+                            <input required ng-model="frm.phone" name="phone" />
+                            <div ng-messages="newEmployer.phone.$error">
+                                <div ng-message="required">This field is required.</div>
+                            </div>
+                        </md-input-container>
+                    </div>
+
+
+                    <div layout-gt-sm="row">
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>Lending Limit</label>
+                            <input type="number" required ng-model="frm.lendingLimit" name="lendingLimit">
+                            <div ng-messages="newEmployer.lendingLimit.$error">
+                                <div ng-message="required">This field is required.</div>
+                            </div>
+                        </md-input-container>
+                    </div>
+
+
+                    <div layout-gt-sm="row">
+                        <md-input-container class="md-block" flex-gt-sm>
+                            <label>password</label>
+                            <input type="password" required ng-model="frm.password" name="password">{{frm.password}}
+                            <div ng-messages="newEmployer.password.$error">
+                                <div ng-message="required">This field is required.</div>
+                            </div>
+                        </md-input-container>
+                    </div>
+
+
+                </md-content>
+
+            </div>
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row">
+            <span flex></span>
+            <md-button type="submit">
+                Submit New Entry
+            </md-button>
+            <md-button type="reset">
+                Clear Form
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>
